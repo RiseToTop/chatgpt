@@ -1,0 +1,97 @@
+.root {
+  height: 100%;
+  position: relative;
+  :global {
+    .settings {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      .tooltip-key {
+        background-color: white;
+        color: rgb(139 92 246);
+        min-width: unset;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 0;
+        position: absolute;
+        // top: 35px;
+        animation: moveUpDown 0.5s infinite alternate linear;
+      }
+    }
+    .content {
+      box-sizing: border-box;
+      max-width: 800px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 8px 16px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .start {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .start-chatgpt-img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background-color: white;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          display: flex;
+          margin: 0 auto;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .chat-list {
+        flex: 1; /* 让滚动区域占据剩余空间 */
+        overflow-y: auto; /* 允许垂直滚动 */
+      }
+      .chat-list::-webkit-scrollbar {
+        display: none;
+      }
+      .column {
+        display: flex;
+        margin-bottom: 28px;
+        .left {
+          .gpt-image {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgb(25, 195, 125);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .right {
+          padding-left: 10px;
+          .name {
+            font-weight: 600;
+          }
+        }
+      }
+      .footer {
+        .MuiInputBase-multiline {
+          border-radius: 10px;
+          // min-height: 52px;
+        }
+      }
+    }
+  }
+}
+:global {
+  .MuiModal-backdrop {
+    background-color: transparent !important;
+  }
+  .openai-key {
+    margin-top: 20px;
+    .MuiInputLabel-formControl {
+      top: -10px;
+    }
+  }
+}

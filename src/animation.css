@@ -1,0 +1,9 @@
+@keyframes moveUpDown {
+    0% {
+        top: 50px;
+    }
+
+    100% {
+        top: 35px;
+    }
+}
